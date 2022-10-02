@@ -5,6 +5,7 @@ const Container = styled.div`
     margin-bottom: 20px;
     @media ${(props) => props.theme.breakpoints.sm} {
         height: 50px;
+        margin-top: 15px;
     }
 `;
 

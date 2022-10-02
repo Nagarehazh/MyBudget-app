@@ -11,6 +11,7 @@ import {
 } from './ListInformationStyles'
 import { dataItems } from '../../constants/data'
 
+
 const ListInformation = () => {
   return (
     <Container>
