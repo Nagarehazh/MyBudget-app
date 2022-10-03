@@ -21,7 +21,7 @@ function Modal({ children, modal, setModal } : ModalProps) {
         <Overlay>
           <ModalContainer>
             <EncabezadoModal>
-              <h3>Creating...</h3>
+              <h3>MyBudget.</h3>
             </EncabezadoModal>
             <ButtonClose onClick={() => setModal(!modal)}>X</ButtonClose>
             {children}

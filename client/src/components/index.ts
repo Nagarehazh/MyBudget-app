@@ -6,3 +6,4 @@ export { default as Slider} from './Slider/Slider';
 export { default as CurrentlyBalance } from './CurrentlyBalance/CurrentlyBalance';
 export { default as ListInformation } from './ListInformation/ListInformation';
 export { default as Modal } from './Modal/Modal';
+export { default as IndividualBudget } from './IndividualBudget/IndividualBudget';

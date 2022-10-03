@@ -11,6 +11,7 @@ const Overlay = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 999;
 `;
 
 const ModalContainer = styled.div`
@@ -21,6 +22,8 @@ const ModalContainer = styled.div`
     border-radius: 5px;
     box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
     padding: 20px;
+    
+    
 `;
 
 const EncabezadoModal = styled.div`
