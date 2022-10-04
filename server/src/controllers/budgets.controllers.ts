@@ -25,13 +25,14 @@ export async function getBudget(req: Request, res: Response): Promise<Response> 
 
 export async function createBudget(req: Request, res: Response): Promise<Response> {
    try{
-         const { concept, amount, date, type, category } = req.body;
+         const { concept, amount, date, type, category, userId } = req.body;
          const budget = await Budget.create({
               concept,
               amount,
               date,
               type,
-              category
+              category,
+              userId
          });
          return res.status(200).json(budget);
    }  catch (error) {
