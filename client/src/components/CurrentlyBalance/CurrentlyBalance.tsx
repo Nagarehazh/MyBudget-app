@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     Container,
     CardsContainer,
@@ -16,10 +16,11 @@ import {
     OptionCategory
 } from './CurrentlyBalanceStyles'
 import { Modal } from '..'
-import { useAddBudgetMutation } from '../../redux/serverCall'
+import { useAddBudgetMutation, useGetBudgetsQuery } from '../../redux/serverCall'
 
 const CurrentlyBalance = () => {
     const [addBudget] = useAddBudgetMutation()
+    const {data} = useGetBudgetsQuery()
 
     const [description, setDescription] = React.useState('')
     const [amount, setAmount] = React.useState('')
@@ -27,6 +28,8 @@ const CurrentlyBalance = () => {
     const [type, setType] = React.useState('')
     const [category, setCategory] = React.useState('')
     const [modal, setModal] = React.useState(false);
+
+    const [currenBalance, setCurrenBalance] = React.useState(0)
 
     const onSubmitForm = (e: any) => {
         e.preventDefault();
@@ -45,13 +48,28 @@ const CurrentlyBalance = () => {
         setModal(!modal);
     }
 
+    useEffect(() => {
+    const currentlyBalance = data && (data as any).reduce((acc: number, item: any) => {
+        if(item.type === 'income') {
+            return acc + parseFloat(item.amount)
+        } else {
+            return acc - parseFloat(item.amount)
+        }
+    }, 0)
+    
+    if(currentlyBalance) {
+        setCurrenBalance((currentlyBalance as any).toFixed(2))
+    }
+    
+    }, [data])
+
 
     return (
         <Container>
             <CardsContainer>
                 <Card>
                     <CardTitle>Current Balance</CardTitle>
-                    <CardValue>$0.00</CardValue>
+                    <CardValue>${currenBalance}</CardValue>
                     <CardButton onClick={handleAddOperation}>Add Transaction</CardButton>
                 </Card>
             </CardsContainer>
