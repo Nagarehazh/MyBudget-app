@@ -5,6 +5,8 @@ import { Budget } from "../models/budget";
 export async function getBudgets(_req: Request, res: Response): Promise<Response> {
     try {
         const budgets = await Budget.findAll();
+        //Inver the order of the budgets
+        budgets.reverse();
         return res.status(200).json(budgets);
     }   catch (error) {
         return res.status(500).json(error);

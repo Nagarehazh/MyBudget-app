@@ -7,3 +7,4 @@ export { default as CurrentlyBalance } from './CurrentlyBalance/CurrentlyBalance
 export { default as ListInformation } from './ListInformation/ListInformation';
 export { default as Modal } from './Modal/Modal';
 export { default as IndividualBudget } from './IndividualBudget/IndividualBudget';
+export { default as FilterToolBar } from './FilterToolBar/FilterToolBar';

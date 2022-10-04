@@ -4,6 +4,7 @@ import {
     NavBar,
     CurrentlyBalance,
     ListInformation,
+    FilterToolBar,
 } from '../../components'
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
             <Announcement />
             <NavBar />
             <CurrentlyBalance />
+            <FilterToolBar />
             <ListInformation />
         </div>
     );

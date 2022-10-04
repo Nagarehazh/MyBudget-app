@@ -25,7 +25,6 @@ import { Modal } from '..'
 import {useDeleteBudgetMutation, useUpdateBudgetMutation} from '../../redux/serverCall'
 
 
-
 interface itemProps {
     item: {
         id: number;
@@ -39,6 +38,7 @@ interface itemProps {
 
 const IndividualBudget = ({ item }: itemProps) => {
     const [deleteBudget] = useDeleteBudgetMutation()
+    const [updateBudget] = useUpdateBudgetMutation()
     const [description, setDescription] = React.useState('')
     const [amount, setAmount] = React.useState('')
     const [date, setDate] = React.useState('')
@@ -46,11 +46,19 @@ const IndividualBudget = ({ item }: itemProps) => {
     const [modal, setModal] = React.useState(false);
     const [deleteSure, setDeleteSure] = React.useState(true);
 
-    
-
-    const onSubmitForm = (e: any) => {
+  const onSubmitForm = (e: any) => {
         e.preventDefault();
         console.log('submit');
+
+        updateBudget({
+            id: item.id,
+            concept: description,
+            amount: Number(amount),
+            date: date,
+            type: item.type,
+            category: category
+        })
+        window.location.reload()
     }
 
     const handleUploadOperation = (id:number) => {
@@ -110,22 +118,26 @@ const IndividualBudget = ({ item }: itemProps) => {
                             placeholder="Description"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
+                            required
                         />
                         <Input
                             type="number"
                             placeholder="Amount"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
+                            required
                         />
                         <Input
                             type="date"
                             placeholder="Date"
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
+                            required
                         />
                         <SelectCategory
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
+                            required
                         >
                             <OptionCategory value="">Select category</OptionCategory>
                             <OptionCategory value="food">Food</OptionCategory>

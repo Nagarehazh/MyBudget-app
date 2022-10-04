@@ -16,8 +16,10 @@ import {
     OptionCategory
 } from './CurrentlyBalanceStyles'
 import { Modal } from '..'
+import { useAddBudgetMutation } from '../../redux/serverCall'
 
 const CurrentlyBalance = () => {
+    const [addBudget] = useAddBudgetMutation()
 
     const [description, setDescription] = React.useState('')
     const [amount, setAmount] = React.useState('')
@@ -28,7 +30,15 @@ const CurrentlyBalance = () => {
 
     const onSubmitForm = (e: any) => {
         e.preventDefault();
-        console.log('submit');
+
+        addBudget({
+            concept: description,
+            amount: Number(amount),
+            date: date,
+            type: type,
+            category: category
+        })
+        window.location.reload()
     }
 
     const handleAddOperation = () => {
@@ -57,22 +67,26 @@ const CurrentlyBalance = () => {
                             placeholder="Description"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
+                            required
                         />
                         <Input
                             type="number"
                             placeholder="Amount"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
+                            required
                         />
                         <Input
                             type="date"
                             placeholder="Date"
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
+                            required
                         />
                         <SelectType
                             value={type}
                             onChange={(e) => setType(e.target.value)}
+                            required
                         >
                             <OptionType value="">Select type</OptionType>
                             <OptionType value="income">Income</OptionType>
@@ -81,6 +95,7 @@ const CurrentlyBalance = () => {
                         <SelectCategory
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
+                            required
                         >
                             <OptionCategory value="">Select category</OptionCategory>
                             <OptionCategory value="food">Food</OptionCategory>
