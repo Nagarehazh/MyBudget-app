@@ -14,7 +14,6 @@ import {
     ListItem,
     Right,
     ContactItem,
-    Payment,
     ContainerList,
 } from './FooterStyles';
 
@@ -66,7 +65,6 @@ function Footer() {
                 <ContactItem><Room style={{ marginRight: '10px' }} />459 Exam Path , South Example 53846</ContactItem>
                 <ContactItem><Phone style={{ marginRight: '10px' }} />+1 234 56 78</ContactItem>
                 <ContactItem><Mail style={{ marginRight: '10px' }} />Contact@harleyzapata.com</ContactItem>
-                <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
             </Right>
         </Container>
     );

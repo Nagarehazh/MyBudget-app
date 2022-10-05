@@ -75,10 +75,6 @@ const ContactItem = styled.div`
     align-items: center;
 `;
 
-const Payment = styled.img`
-    width: 50%;
-`;
-
 const ContainerList = styled.div`
     display: flex;
     justify-content: space-between;
@@ -98,6 +94,5 @@ export {
   ListItem,
   Right,
   ContactItem,
-  Payment,
   ContainerList,
 };
