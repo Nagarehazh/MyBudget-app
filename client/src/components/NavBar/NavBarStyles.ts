@@ -57,6 +57,17 @@ const MenuItem = styled.div`
     }
 `;
 
+const ButtonLogout = styled.button`
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 25px;
+    @media ${(props) => props.theme.breakpoints.sm} {
+        font-size: 12px;
+    }
+`;
+
 export {
     Container,
     Wrapper,
@@ -65,5 +76,6 @@ export {
     Logo,
     Right,
     MenuItem,
+    ButtonLogout
   };
   

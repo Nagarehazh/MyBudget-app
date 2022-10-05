@@ -51,8 +51,10 @@ function Slider() {
                         <InfoContainer>
                             <Title>{item.title}</Title>
                             <Desc>{item.desc}</Desc>
-                            <Link to="/products/senior">
+                            <Link to="/login">
                                 <Button>LOGIN</Button>
+                            </Link>
+                            <Link to="/register">
                                 <Button>REGISTER</Button>
                             </Link>
                         </InfoContainer>

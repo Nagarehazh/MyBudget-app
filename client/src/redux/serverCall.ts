@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+
 export const serverCall = createApi({
     reducerPath: 'serverCall',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000' }),
-    endpoints: (builder)  => ({
+    endpoints: (builder) => ({
         getBudgets: builder.query<void, void>({
             query: () => '/budgets',
         }),
@@ -33,6 +34,24 @@ export const serverCall = createApi({
                 method: 'DELETE',
             }),
         }),
+        login: builder.mutation({
+            query: (user) => ({
+                url: '/login',
+                method: 'POST',
+                body: user,
+
+            }),
+        }),
+        register: builder.mutation({
+            query: (user) => ({
+                url: '/register',
+                method: 'POST',
+                body: user,
+            }),
+        }),
+        getUserBudgets: builder.query({
+            query: (id) => `/users/${id}/budgets`,
+        }),
     }),
 });
 
@@ -43,4 +62,7 @@ export const {
     useAddBudgetMutation,
     useUpdateBudgetMutation,
     useDeleteBudgetMutation,
+    useLoginMutation,
+    useRegisterMutation,
+    useGetUserBudgetsQuery,
 } = serverCall;

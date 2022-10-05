@@ -1,5 +1,4 @@
 export { default as Home } from '../pages/Home/Home';
-export { default as Balance } from '../pages/Balance/Balance';
 export { default as NavBar } from './NavBar/NavBar';
 export { default as Announcement } from './Announcement/Announcement';
 export { default as Slider} from './Slider/Slider';
@@ -8,3 +7,6 @@ export { default as ListInformation } from './ListInformation/ListInformation';
 export { default as Modal } from './Modal/Modal';
 export { default as IndividualBudget } from './IndividualBudget/IndividualBudget';
 export { default as FilterToolBar } from './FilterToolBar/FilterToolBar';
+export { default as Login} from '../pages/Login/Login';
+export { default as Register} from '../pages/Register/Register';
+export { default as Footer} from './Footer/Footer';

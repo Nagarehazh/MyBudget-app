@@ -6,7 +6,8 @@ import GlobalStyles from '../styles/globals';
 import { Container } from '../theme/MainContainerStyles';
 import {
   Home,
-  Balance,
+  Login,
+  Register,
 } from '.'
 
 
@@ -18,7 +19,8 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/balance" element={<Balance />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </main>
       </ThemeProvider>

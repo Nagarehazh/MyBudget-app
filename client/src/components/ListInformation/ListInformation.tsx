@@ -6,7 +6,7 @@ import {
 } from './ListInformationStyles'
 import { IndividualBudget } from '..'
 // import { dataItems } from '../../constants/data'
-import { useGetBudgetsQuery } from '../../redux/serverCall'
+import { useGetUserBudgetsQuery } from '../../redux/serverCall'
 import { useSelector } from 'react-redux';
 import { setSearch } from '../../redux/searchRedux';
 import { setType } from '../../redux/typeRedux';
@@ -22,7 +22,15 @@ interface dataItemstypes {
 }
 
 const ListInformation = () => {
-  const { data, isLoading } = useGetBudgetsQuery()
+  const DataUser = JSON.parse(localStorage.getItem('user') || '{}')
+
+  if (DataUser.userName) {
+      var { id } = DataUser;
+  }
+
+  
+  const { data, isLoading } = useGetUserBudgetsQuery(id)
+
   const { payload } = useSelector(setSearch)
   const { payload: typePayload } = useSelector(setType)
   const { payload: categoryPayload } = useSelector(setCategory)

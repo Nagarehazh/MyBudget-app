@@ -16,11 +16,13 @@ import {
     OptionCategory
 } from './CurrentlyBalanceStyles'
 import { Modal } from '..'
-import { useAddBudgetMutation, useGetBudgetsQuery } from '../../redux/serverCall'
+import { useAddBudgetMutation, useGetBudgetsQuery, useGetUserBudgetsQuery } from '../../redux/serverCall'
 
 const CurrentlyBalance = () => {
     const [addBudget] = useAddBudgetMutation()
-    const {data} = useGetBudgetsQuery()
+    
+   
+    // const {data} = useGetBudgetsQuery()
 
     const [description, setDescription] = React.useState('')
     const [amount, setAmount] = React.useState('')
@@ -31,6 +33,13 @@ const CurrentlyBalance = () => {
 
     const [currenBalance, setCurrenBalance] = React.useState(0)
 
+    const DataUser = JSON.parse(localStorage.getItem('user') || '{}')
+
+    if (DataUser.userName) {
+        var { id } = DataUser;
+    }
+    
+    const {data} = useGetUserBudgetsQuery(id)
     const onSubmitForm = (e: any) => {
         e.preventDefault();
 
@@ -39,7 +48,8 @@ const CurrentlyBalance = () => {
             amount: Number(amount),
             date: date,
             type: type,
-            category: category
+            category: category,
+            userId: id
         })
         window.location.reload()
     }
