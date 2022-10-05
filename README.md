@@ -18,6 +18,7 @@ MyBudget App is developed with the following technologies:
 ● CSS PURE (styled-components) (no frameworks) <br/><br/>
 
 ##Preview
+<img src="https://img.icons8.com/bubbles/200/000000/linkedin.png" width="100" height="100"/>
 [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=PTTZZiUD4Eg)
 
 ## OPERATIONS (income and expenses)
