@@ -18,8 +18,16 @@ MyBudget App is developed with the following technologies:
 ● CSS PURE (styled-components) (no frameworks) <br/><br/>
 
 ##Preview
-<img src="https://img.icons8.com/bubbles/200/000000/linkedin.png" width="100" height="100"/>
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=PTTZZiUD4Eg)
+<img src="https://github.com/Nagarehazh/MyBudget-app/blob/Deploy/assets/captura3.png" width="100%" height="100%"/>
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://github.com/Nagarehazh/MyBudget-app/blob/Deploy/assets/captura4.png)  |  ![](https://github.com/Nagarehazh/MyBudget-app/blob/Deploy/assets/captura5.png)
+<img src="https://github.com/Nagarehazh/MyBudget-app/blob/Deploy/assets/captura1.png" width="100%" height="100%"/>
+<img src="https://github.com/Nagarehazh/MyBudget-app/blob/Deploy/assets/captura2.png" width="100%" height="100%"/>
+
+##Video Preview<br/>
+https://www.youtube.com/watch?v=PTTZZiUD4Eg
 
 ## OPERATIONS (income and expenses)
 The application contain:<br/>
