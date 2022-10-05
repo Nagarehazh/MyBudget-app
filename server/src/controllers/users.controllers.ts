@@ -77,7 +77,7 @@ export async function deleteUser(req: Request, res: Response): Promise<Response>
             await user.destroy();
             return res.status(200).json(user);
         }
-        return res.status(404).json({ message: 'User not found' });
+        return res.status(404).json({ message: 'User not found' });   
     } catch (error) {
         return res.status(500).json(error);
     }
@@ -87,7 +87,7 @@ export async function deleteUser(req: Request, res: Response): Promise<Response>
 export async function getUserBudgets(req: Request, res: Response): Promise<Response> {
     try {
         const { id } = req.params;
-        //pagination
+        
 
         const budgets = await Budget.findAll({
             attributes: ['id', 'concept', 'amount', 'date', 'type', 'category'],
@@ -99,7 +99,7 @@ export async function getUserBudgets(req: Request, res: Response): Promise<Respo
         if (budgets.length > 0) {
             return res.status(200).json(budgets.reverse());
         } else {
-            return res.status(404).json({ message: 'Budget not found' });
+            return res.status(404).json({ message: 'No budgets found' });
         }
     } catch (error) {
         return res.status(500).json(error);

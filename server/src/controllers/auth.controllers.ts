@@ -9,7 +9,7 @@ dotenv.config()
 export const register = async (req: Request, res: Response): Promise<Response> => {
     try {
         const { userName, email, password } = req.body;
-        console.log(userName, email, password );
+        // console.log(userName, email, password );
         const hashedPassword = await bcrypt.hash(password, 10);
         
         const user = await User.create({
@@ -18,7 +18,7 @@ export const register = async (req: Request, res: Response): Promise<Response> =
             password: hashedPassword
         });
         
-        const token = jwt.sign({ id: user }, process.env.SECRET_KEY || 'secretkey', {
+        const token = jwt.sign({ id: user }, "sda1234" || 'secretkey', {
             expiresIn: 60 * 60 * 24
         });
         return res.status(200).json({ user, token });

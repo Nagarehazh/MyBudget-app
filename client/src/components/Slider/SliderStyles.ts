@@ -45,6 +45,7 @@ z-index: 2;
 const Wrapper = styled.div<WrapperProps>`
 height: 100%;
 display: flex;
+text-align: center;
 transition: all 1.5s ease;
 transform: translateX(${(props) => props.slideIndex * -100}vw);
 @media ${(props) => props.theme.breakpoints.sm} {
@@ -83,6 +84,7 @@ obeject-fit: cover;
 const InfoContainer = styled.div`
 flex: 2;
 padding: 50px;
+max-width: 1300px;
 @media ${(props) => props.theme.breakpoints.sm} {
     padding: 20px;
     text-align: center;
@@ -91,7 +93,7 @@ padding: 50px;
 
 const Title = styled.h1`
 font-size: 70px;
-max-width: 800px;
+
 
 @media ${(props) => props.theme.breakpoints.sm} {
     font-size: 30px;

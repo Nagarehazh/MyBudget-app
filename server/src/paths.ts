@@ -9,4 +9,5 @@ export const USERS_ID = '/users/:id'
 export const USERS_BUDGETS = '/users/:id/budgets'
 
 export const LOGIN = '/login'
+export const REGISTER = '/register'
 

@@ -1,13 +1,14 @@
 import { Router } from "express";
 import {register, login} from "../controllers/auth.controllers";
+import {LOGIN, REGISTER} from "../paths";
 
 const router = Router();
 
 //REGISTER
-router.post("/register", register)
+router.post(REGISTER, register)
 
 //LOGIN
-router.post("/login", login)
+router.post(LOGIN, login)
 
 
 
